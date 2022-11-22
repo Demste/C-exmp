@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<malloc.h>
 #include<string.h>
-#define 
+#define MAXNAME 20
+//kisinin alabilceği maximum harf
 typedef struct node
 {
 	int number;
-	char name[20];
+	char name[MAXNAME];
 	struct node * next;
 }node;
 
@@ -20,15 +21,13 @@ node *DelBeg(node *head);
 node *DelEnd(node *head);
 node *DelNode(node *head);
 
-
-
-
+//İstenilen fonksiyonu mainnin içine yazıp dene
 int main()
 {
 	int n=0;
 	node * head=NULL;	
 	
-	printf("Kac adet istiyon\n");
+	printf("Kac adet kisi olsun\n");
 	scanf("%d",&n);
 	head=CreateLinkedList(n);
 
@@ -47,7 +46,7 @@ node *DelNode(node * head)
 	switch(x)
 	{
 		case 1:
-			char name[20];
+			char name[MAXNAME];
 			printf("\nSilincek ismi yazin ");
 			scanf("%s",&name);
 			
@@ -103,11 +102,6 @@ node *DelNode(node * head)
 			
 	}
 }
-
-
-
-
-
 
 //Son düğümü silme
 node *DelEnd(node * head)
@@ -220,9 +214,6 @@ node *InsertMid(node *head)
 	}
 }
 
-
-
-
 //Bağlı listenin sonuna eklicem
 node * InsertEnd(node * head)
 {
@@ -245,11 +236,7 @@ node * InsertEnd(node * head)
 	iter->next=temp;
 	return head;
 	
-	
 }
-
-
-
 
 //Bağlı listenin başına eleman ekleme
 node * InsertBeg(node* head)
@@ -269,11 +256,6 @@ node * InsertBeg(node* head)
 	
 	
 }
-
-
-
-
-
 
 //listenin başınnın adreisni geri gönderilen link list yazdık
 node * CreateLinkedList(int x)
@@ -325,10 +307,3 @@ void DisplayLinkedList(node * head)
 		
 	}
 }
-
-
-
-
-
-
-
